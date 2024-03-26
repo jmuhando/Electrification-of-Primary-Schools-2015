@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Status of Rural Electrification in Kenya</title>
+    <meta charset="utf-8" />
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/dark-glass/sidebar.css" />
+    <link rel="stylesheet" href="./css/L.Control.Sidebar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.6/css/jquery.dataTables.css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+
+
+<style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body,
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        #county{
+            font-size: 30px;
+            color: #5F5F5F;
+            font-family: "Lucida Console", Monaco, monospace;
+        }
+        #heading{
+            font-size: 30px;
+            font-family: "Lucida Console", Monaco, monospace;
+            height: 53px;
+            width: 100%;
+            background-image: url("./img/header.png");
+            opacity: 0.8;
+        }
+        #myChart{
+            opacity: 1;
+        }
+</style>  
+    
+</head>
+
+<body>
+<div id="heading">
+    <header align="center"> Primary Schools connected to Electricity </header>
+</div>
+<div id="sidebar">
+    <section id="county" class="data-container" align="center" style="height:50px;"></section>
+    <section  >
+    <canvas id="myChart" style="height:200px;" width="300px;"></canvas>
+    </section>
+    <section id="" class="data-container1" ></section>
+    <section id="demo" > 
+        
+    </section>
+</div>
+<div id="map">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.sidebar.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.6/js/jquery.dataTables.min.js"/></script>
+    <link rel="stylesheet" type="text/css" href="./css/schools_table.css" />
+    <script type="text/javascript" src="./js/schoolsdata.js"></script>
+    <ul id="demo_menu1" >
+            
+            <script type="text/javascript">
+            function testing(schoolsdata){
+                $(document).ready(function() {
+                $('#demo_menu1').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example1"></table>' );
+                $('#example1').dataTable( {
+                "info":    false,
+                "ordering":   true,
+                "processing": true,
+                "pageLength": 8,
+                "data": schoolsdata,
+                "columns": [
+                        { "title": "County" },
+                        { "title": "Constituency" },
+                        { "title": "School" },
+                        { "title": "Status", "class": "center" }
+                            ]
+                    } );   
+                } );
+            };
+            </script>
+            <!-- <p>This is normal text - <b>and this is bold text</b>.</p> -->
+    </ul>
+</div>
+    
+    <script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"
+    </script>
+<script type="text/javascript" src="./js/county.js"></script>
+
+<script type="text/javascript" src="./js/L.Control.Sidebar.js"/></script>
+
+<script type="text/javascript" src="./js/Chart.js"></script>
+
+<script type="text/javascript" src="./js/sch.js"/></script><!--js source source code-->
+<script type="text/javascript" src="./js/pie.js"/></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.6/js/jquery.dataTables.min.js"/></script>
+<script type="text/javascript" src="https://www.datatables.net/release-datatables/extensions/FixedHeader/js/dataTables.fixedHeader.js"/></script>
+<script type="text/javascript" src="https://datatables.net/download/build/FixedHeader.nightly.js?_=ec4702e90f2f89a0a418d2d4e8e68515"></script>
+
+</body>
+</html>
